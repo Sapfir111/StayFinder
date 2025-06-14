@@ -22,6 +22,8 @@ app.post('/api/stripe', express.raw({
     type: 'application/json',
 }), stripeWebhooks);
 
+// github
+
 // Middleware
 app.use(express.json());
 app.use(clerkMiddleware());
