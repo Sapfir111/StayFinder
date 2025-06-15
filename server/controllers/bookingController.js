@@ -134,9 +134,6 @@ export const stripePayment = async (req, res) => {
         const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY);
 
         const line_items = [
-            // я створював акаунт на США, але якщо буде якась
-            // помилка з оплатою, це може бути
-            // у неспівпадінні валют (currency: 'usd')
             {
                 price_data: {
                     currency: 'usd',
