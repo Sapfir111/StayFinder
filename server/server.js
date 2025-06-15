@@ -11,9 +11,6 @@ import roomRouter from "./routes/roomRoutes.js";
 import bookingRouter from "./routes/bookingRoutes.js";
 import {stripeWebhooks} from "./controllers/stripeWebhooks.js";
 
-connectDB();
-connectCloudinary();
-
 const app = express();
 app.use(cors()); // Enable Cross-Origin Resource Sharing
 
@@ -26,6 +23,10 @@ app.post('/api/stripe', express.raw({
 
 // Middleware
 app.use(express.json());
+
+await connectDB();
+await connectCloudinary();
+
 app.use(clerkMiddleware());
 
 // API to listen to Clerk Webhooks
