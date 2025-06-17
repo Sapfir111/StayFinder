@@ -43,22 +43,21 @@ const ListRoom = () => {
     return (
         <div>
             <Title
-                title="Room Listings"
-                subTitle="View, edit, or manage all listed rooms.
-                Keep the information up-to-date to provide the best experience for users."
+                title="Управління номерами"
+                subTitle="Переглядайте, редагуйте та керуйте всіма розміщеними номерами. Оновлюйте інформацію вчасно, щоб забезпечити найкращий досвід для користувачів."
                 align="left"
                 font="outfit"
             />
-            <p className="text-gray-500 mt-8">All Rooms</p>
+            <p className="text-gray-500 mt-8">Усі номери</p>
             <div className="w-full max-w-3xl text-left border border-gray-300 rounded-lg max-h-80 overflow-y-scroll
             mt-3">
                 <table className="w-full">
                     <thead className="bg-gray-50">
                         <tr>
-                            <th className="py-3 px-4 text-gray-800 font-medium">Name</th>
-                            <th className="py-3 px-4 text-gray-800 font-medium max-sm:hidden">Facility</th>
-                            <th className="py-3 px-4 text-gray-800 font-medium">Price / night</th>
-                            <th className="py-3 px-4 text-gray-800 font-medium text-center">Actions</th>
+                            <th className="py-3 px-4 text-gray-800 font-medium">Назва</th>
+                            <th className="py-3 px-4 text-gray-800 font-medium max-sm:hidden">Зручності</th>
+                            <th className="py-3 px-4 text-gray-800 font-medium">Ціна / за ніч</th>
+                            <th className="py-3 px-4 text-gray-800 font-medium text-center">Дії</th>
                         </tr>
                     </thead>
                     <tbody className="text-sm">

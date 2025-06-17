@@ -1,6 +1,6 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {assets, facilityIcons, roomCommonData} from "../assets/assets.js";
+import {assets, facilityIcons, roomCommonData, amenityTranslations} from "../assets/assets.js";
 import StarRating from "../components/StarRating.jsx";
 import {useAppContext} from "../context/AppContext.jsx";
 import {toast} from "react-hot-toast";
@@ -90,18 +90,16 @@ const RoomDetails = () => {
         <div className="py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32">
             {/* Room Details */}
             <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
-                <h1 className="text-3xl md:text-4xl font-playfair">
-                    {room.hotel.name}
+                <div className="flex items-center gap-2">
+                    <h1 className="text-3xl md:text-4xl font-playfair">{room.hotel.name}</h1>
                     <span className="font-inter text-sm">({room.roomType})</span>
-                </h1>
-                <p className="text-xs font-inter py-1.5 px-3 text-white bg-orange-500
-                rounded-full">20% OFF</p>
+                </div>
             </div>
 
             {/* Room Rating */}
             <div className="flex items-center gap-1 mt-2">
-                <StarRating />
-                <p className="ml-2">200+ Reviews</p>
+                <StarRating/>
+                <p className="ml-2">200+ Відгуків</p>
             </div>
 
             {/* Room Address */}
@@ -141,23 +139,31 @@ const RoomDetails = () => {
                 <div className="flex flex-col">
                     <h1 className="text-3xl md:text-4xl font-playfair">Experience Luxury Like Never Before</h1>
                     <div className="flex flex-wrap items-center mt-3 mb-6 gap-4">
-                        {room.amenities.map((item, index) => (
-                            <div
-                                key={index}
-                                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100"
-                            >
-                                <img
-                                    src={facilityIcons[item]}
-                                    alt={item}
-                                    className="w-5 h-5"
-                                />
-                                <p className="text-xs">{item}</p>
-                            </div>
-                        ))}
+                        {room.amenities.map((item, index) => {
+                            const icon = facilityIcons[item];
+                            if (!icon) {
+                                console.warn("No icon for:", item);
+                                return null;
+                            }
+                            return (
+                                <div
+                                    key={index}
+                                    className="flex items-center gap-2 px-3 py-2 rounded-lg
+                                    bg-[#F5F5FF]/70"
+                                >
+                                    <img
+                                        src={icon}
+                                        alt={item}
+                                        className="w-5 h-5"
+                                    />
+                                    <p className="text-xs">{item}</p>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
                 {/* Room price */}
-                <p className="text-2xl font-medium">${room.pricePerNight} / night</p>
+                <p className="text-2xl font-medium">${room.pricePerNight} / за ніч</p>
             </div>
 
             {/* CheckIn CheckOut Form */}
@@ -171,11 +177,11 @@ const RoomDetails = () => {
                         <label
                             htmlFor="checkInDate"
                             className="font-medium"
-                        >Check-In</label>
+                        >Дата заїзду</label>
                         <input
                             type="date"
                             id="checkInDate"
-                            placeholder="Check-In"
+                            placeholder="Дата заїзду"
                             className="w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none"
                             required
                             onChange={(e) => setCheckInDate(e.target.value)}
@@ -187,11 +193,11 @@ const RoomDetails = () => {
                         <label
                             htmlFor="checkOutDate"
                             className="font-medium"
-                        >Check-Out</label>
+                        >Дата виїзду</label>
                         <input
                             type="date"
                             id="checkOutDate"
-                            placeholder="Check-Out"
+                            placeholder="Дата виїзду"
                             className="w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none"
                             required
                             onChange={(e) => setCheckOutDate(e.target.value)}
@@ -204,14 +210,17 @@ const RoomDetails = () => {
                         <label
                             htmlFor="guests"
                             className="font-medium"
-                        >Guests</label>
+                        >Гості</label>
                         <input
                             type="number"
                             id="guests"
                             placeholder="1"
                             className="max-w-20 rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none"
                             required
-                            onChange={(e) => setGuests(e.target.value)}
+                            onChange={(e) => {
+                                if (e.target.value < 1) return; 
+                                setGuests(e.target.value);
+                            }}
                             value={guests}
                         />
                     </div>
@@ -222,7 +231,7 @@ const RoomDetails = () => {
                     text-white rounded-md max-md:w-full max-md:mt-6 md:px-25 py-3 md:py-4
                     text-base cursor-pointer"
                 >
-                    {isAvailable ? 'Book now' : 'Check Availability'}
+                    {isAvailable ? 'Забронювати' : 'Перевірити доступність'}
                 </button>
             </form>
 
@@ -247,7 +256,7 @@ const RoomDetails = () => {
             </div>
             <div className="max-w-3xl border-y border-gray-300 my-15 py-10 text-gray-500">
                 <p>
-                    Guests will be allocated on the ground floor according to availability. You get a comfortable Two bedroom apartment has a true city feeling. The price quoted is for two guest, at the guest slot please mark the number of guests to get the exact price for groups. The Guests will be allocated ground floor according to availability. You get the comfortable two bedroom apartment that has a true city feeling.
+                    Гості будуть розміщені на першому поверсі залежно від наявності вільних місць. Ви отримаєте комфортабельні апартаменти з двома спальнями, що передають справжню атмосферу міста. Вказана ціна розрахована на двох осіб. Будь ласка, оберіть точну кількість гостей у відповідному полі, щоб дізнатися актуальну ціну для групи.
                 </p>
             </div>
 
@@ -261,15 +270,13 @@ const RoomDetails = () => {
                         className="h-14 w-14 md:h-18 md:w-18 rounded-full"
                     />
                     <div>
-                        <p className="text-lg md:text-xl">Hosted By {room.hotel.name}</p>
+                        <p className="text-lg md:text-xl">Проживання від {room.hotel.name}</p>
                         <div className="flex items-center mt-1">
                             <StarRating />
-                            <p className="ml-2">200+ Reviews</p>
+                            <p className="ml-2">200+ Відгуків</p>
                         </div>
                     </div>
                 </div>
-                <button className="px-6 py-2.5 mt-4 rounded text-white bg-primary
-                hover:bg-primary-dull transition-all cursor-pointer">Contact Now</button>
             </div>
         </div>
     );

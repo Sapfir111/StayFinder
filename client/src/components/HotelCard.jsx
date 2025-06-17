@@ -16,7 +16,7 @@ const HotelCard = ({room, index}) => {
             />
 
             {index % 2 === 0 && <p className="px-3 py-1 absolute top-3 left-3 text-xs bg-white
-            text-gray-800 font-medium rounded-full">Best Seller</p>}
+            text-gray-800 font-medium rounded-full">Лідер пропозицій</p>}
 
             <div className="p-4 pt-5">
                 <div className="flex items-center justify-between">
@@ -30,10 +30,10 @@ const HotelCard = ({room, index}) => {
                     <span>{room.hotel.address}</span>
                 </div>
                 <div className="flex items-center justify-between mt-4">
-                    <p><span className="text-xl text-gray-800">${room.pricePerNight}</span>/night</p>
+                    <p><span className="text-xl text-gray-800">${room.pricePerNight}</span>/за ніч</p>
                     <button className="px-4 py-2 text-sm font-medium border
                     border-gray-300 rounded hover:bg-gray-50 transition-all
-                    cursor-pointer">Book Now</button>
+                    cursor-pointer">Забронювати</button>
                 </div>
             </div>
         </Link>

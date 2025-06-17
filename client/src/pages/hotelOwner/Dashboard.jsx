@@ -34,11 +34,10 @@ const Dashboard = () => {
     }, [user]);
 
     return (
-        <div>
+        <section>
             <Title
-                title="Dashboard"
-                subTitle="Monitor your room listings, track bookings and analyze revenur-all in one place.
-                Stay updated with real-time insights to ensure smooth operations."
+                title="Кабінет власника"
+                subTitle="Керуйте своїми оголошеннями, відстежуйте бронювання та аналізуйте дохід — все в одному місці. Отримуйте актуальну інформацію в режимі реального часу для безперебійної роботи."
                 align="left"
                 font="outfit"
             />
@@ -51,7 +50,7 @@ const Dashboard = () => {
                         className="max-sm:hidden h-10"
                     />
                     <div className="flex flex-col sm:ml-4 font-medium">
-                        <p className="text-blue-500 text-lg">Total Bookings</p>
+                        <p className="text-blue-500 text-lg">Кількість бронювань</p>
                         <p className="text-neutral-400 text-base">{dashboardData.totalBookings}</p>
                     </div>
                 </div>
@@ -63,22 +62,22 @@ const Dashboard = () => {
                         className="max-sm:hidden h-10"
                     />
                     <div className="flex flex-col sm:ml-4 font-medium">
-                        <p className="text-blue-500 text-lg">Total Revenue</p>
+                        <p className="text-blue-500 text-lg">Загальний дохід</p>
                         <p className="text-neutral-400 text-base">{currency} {dashboardData.totalRevenue}</p>
                     </div>
                 </div>
             </div>
 
             {/* Recent Bookings */}
-            <h2 className="text-xl text-blue-950/70 font-medium mb-5">Recent Bookings</h2>
+            <h2 className="text-xl text-blue-950/70 font-medium mb-5">Недавні бронювання</h2>
             <div className="w-full max-w-3xl text-left border border-gray-300 rounded-lg max-h-80 overflow-y-scroll">
                 <table className="w-full">
                     <thead className="bg-gray-50">
                         <tr>
-                            <th className="py-3 px-4 text-gray-800 font-medium">User Name</th>
-                            <th className="py-3 px-4 text-gray-800 font-medium max-sm:hidden">Room Name</th>
-                            <th className="py-3 px-4 text-gray-800 font-medium text-center">Total Amount</th>
-                            <th className="py-3 px-4 text-gray-800 font-medium text-center">Payment Status</th>
+                            <th className="py-3 px-4 text-gray-800 font-medium">Ім'я замовника</th>
+                            <th className="py-3 px-4 text-gray-800 font-medium max-sm:hidden">Назва номера</th>
+                            <th className="py-3 px-4 text-gray-800 font-medium text-center">Загальна сума</th>
+                            <th className="py-3 px-4 text-gray-800 font-medium text-center">Статус оплати</th>
                         </tr>
                     </thead>
                     <tbody className="text-sm">
@@ -96,7 +95,7 @@ const Dashboard = () => {
                                 <td className="py-3 px-4 border-t border-gray-300 flex">
                                     <button className={`py-1 px-3 text-xs rounded-full mx-auto 
                                     ${item.isPaid ? "bg-green-200 text-green-600" : "bg-amber-200 text-yellow-600"}`}>
-                                        {item.isPaid ? 'Completed' : 'Pending'}
+                                        {item.isPaid ? 'Оплачено' : 'В процесі'}
                                     </button>
                                 </td>
                             </tr>
@@ -104,7 +103,7 @@ const Dashboard = () => {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </section>
     );
 };
 

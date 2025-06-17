@@ -2,7 +2,6 @@ import {assets, cities} from "../assets/assets.js";
 import {useAppContext} from "../context/AppContext.jsx";
 import {useState} from "react";
 import {toast} from "react-hot-toast";
-import {data} from "react-router-dom";
 
 const HotelReg = () => {
     const { setShowHotelReg, axios, getToken, setIsOwner } = useAppContext();
@@ -53,19 +52,19 @@ const HotelReg = () => {
                         className="absolute top-4 right-4 h-4 w-4 cursor-pointer"
                         onClick={() => setShowHotelReg(false)}
                     />
-                    <p className="text-2xl font-semibold mt-6">Register Your Hotel</p>
+                    <p className="text-2xl font-semibold mt-6">Зареєструйте ваш готель</p>
                     {/* Hotel Name */}
                     <div className="w-full mt-4">
                         <label
                             htmlFor="name"
                             className="font-medium text-gray-500"
                         >
-                            Hotel Name
+                            Назва готелю
                         </label>
                         <input
                             id="name"
                             type="text"
-                            placeholder="Type Here"
+                            placeholder="Введіть тут"
                             className="border border-gray-200 rounded w-full px-3 py-2.5 mt-1
                             outline-indigo-500 font-light"
                             required
@@ -80,12 +79,12 @@ const HotelReg = () => {
                             htmlFor="contact"
                             className="font-medium text-gray-500"
                         >
-                            Phone
+                            Номер телефону
                         </label>
                         <input
                             id="contact"
                             type=""
-                            placeholder="Type Here"
+                            placeholder="Введіть тут"
                             className="border border-gray-200 rounded w-full px-3 py-2.5 mt-1
                             outline-indigo-500 font-light"
                             required
@@ -100,12 +99,12 @@ const HotelReg = () => {
                             htmlFor="address"
                             className="font-medium text-gray-500"
                         >
-                            Address
+                            Адреса
                         </label>
                         <input
                             id="address"
                             type=""
-                            placeholder="Type Here"
+                            placeholder="Введіть тут"
                             className="border border-gray-200 rounded w-full px-3 py-2.5 mt-1
                             outline-indigo-500 font-light"
                             required
@@ -119,7 +118,7 @@ const HotelReg = () => {
                             htmlFor="city"
                             className="font-medium text-gray-500"
                         >
-                            City
+                            Місто
                         </label>
                         <select
                             id="city"
@@ -132,7 +131,7 @@ const HotelReg = () => {
                             <option
                                 value=""
                             >
-                                Select City
+                                Виберіть місто
                             </option>
                             {cities.map((city) => (
                                 <option
@@ -146,7 +145,7 @@ const HotelReg = () => {
                     </div>
                     <button className="bg-indigo-500 hover:bg-indigo-600 transition-all
                     text-white mr-auto px-6 py-2 rounded cursor-pointer mt-6">
-                        Register
+                        Зареєструвати
                     </button>
                 </div>
             </form>
