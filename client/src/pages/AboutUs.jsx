@@ -16,7 +16,7 @@ const AboutUs = () => {
                 <div className="max-w-1/2 hidden md:block -mr-4 lg:-mr-24 xl:-mr-32">
                     <img
                         src={assets.aboutUsImage}
-                        alt="abous-us-image"
+                        alt="about-us-image"
                     />
                 </div>
             </div>
