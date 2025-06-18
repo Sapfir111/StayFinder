@@ -1,3 +1,4 @@
+import aboutUsImage from './aboutUsImage.png';
 import logo from './logo.svg'
 import searchIcon from './searchIcon.svg'
 import seeLessIcon from './seeLessIcon.svg'
@@ -34,6 +35,7 @@ import totalBookingIcon from "./totalBookingIcon.svg";
 import totalRevenueIcon from "./totalRevenueIcon.svg";
 
 export const assets = {
+    aboutUsImage,
     logo,
     searchIcon,
     seeLessIcon,

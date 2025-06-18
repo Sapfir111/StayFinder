@@ -1,3 +1,5 @@
+import { assets } from "../assets/assets";
+
 const AboutUs = () => {
     return (
         <section className="py-28 md:pb-35 md:pt-32 px-4 md:px-16 lg:px-24 xl:px-32">
@@ -13,7 +15,7 @@ const AboutUs = () => {
                 </div>
                 <div className="max-w-1/2 hidden md:block -mr-4 lg:-mr-24 xl:-mr-32">
                     <img
-                        src="../../src/assets/aboutUsImage.png"
+                        src={assets.aboutUsImage}
                         alt="abous-us-image"
                     />
                 </div>
