@@ -52,7 +52,7 @@ const Footer = () => {
                 </div>
 
                 <div>
-                    <p className='font-playfair text-lg text-gray-800'>КОМПАНІЯ</p>
+                    <p className='text-lg text-gray-800'>КОМПАНІЯ</p>
                     <ul className='mt-3 flex flex-col gap-2 text-sm'>
                         {footerLinks.map((link, i) => (
                             link.id === 'col-1' && (
@@ -67,7 +67,7 @@ const Footer = () => {
                 </div>
 
                 <div>
-                    <p className='font-playfair text-lg text-gray-800'>ПІДТРИМКА</p>
+                    <p className='text-lg text-gray-800'>ПІДТРИМКА</p>
                     <ul className='mt-3 flex flex-col gap-2 text-sm'>
                         {footerLinks.map((link, i) => (
                             link.id === 'col-2' && (

@@ -170,7 +170,7 @@ const AllRooms = () => {
                         <div className="md:w-1/2 flex flex-col gap-2">
                             <p className="text-gray-500">{room.hotel.city}</p>
                             <p
-                                className="text-gray-800 text-3xl font-playfair cursor-pointer"
+                                className="text-gray-800 text-3xl cursor-pointer"
                                 onClick={() => {
                                     navigate(`/rooms/${room._id}`);
                                     scrollTo(0, 0)

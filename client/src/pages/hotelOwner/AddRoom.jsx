@@ -33,7 +33,7 @@ const AddRoom = () => {
 
         // Check if all inputs are filled
         if (!inputs.roomType || !inputs.pricePerNight || !inputs.amenities || !Object.values(images).some(image => image)) {
-            toast.error('Please fill in all the details');
+            toast.error('Будь ласка, вкажіть усі деталі');
             return;
         }
 
@@ -58,7 +58,7 @@ const AddRoom = () => {
             } });
 
             if (data.success) {
-                toast.success(data.message);
+                toast.success("Номер додано");
                 setInputs({
                     roomType: '',
                     pricePerNight: 0,
@@ -159,7 +159,7 @@ const AddRoom = () => {
                     </div>
                 ))}
             </div>
-            <button className="bg-primary text-white px-8 py-2 rounded mt-8
+            <button className="bg-blue-600 text-white px-8 py-2 rounded mt-8
             cursor-pointer" disabled={loading}>
                 {loading ? 'Додавання...' : 'Додати номер'}
             </button>

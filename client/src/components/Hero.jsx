@@ -31,7 +31,7 @@ const Hero = () => {
         <section className="flex flex-col items-start justify-center
         px-6 md:px-16 lg:px-24 xl:px-32 text-white bg-[url('/src/assets/heroImage.png')]
         bg-no-repeat bg-cover bg-center h-screen">
-            <h1 className="font-playfair text-2xl md:text-5xl md:text-[56px] md:leading-[56px]
+            <h1 className="text-2xl md:text-5xl md:text-[50px] md:leading-[50px]
             font-bold md:font-extrabold max-w-xl mt-4">Вирушайте туди, де чекає ваш ідеальний відпочинок</h1>
             <p className="max-w-130 mt-2 text-sm md:text-base">
                 Відчуйте розкіш і комфорт у найпрестижніших готелях світу. Ваша подорож починається зараз.

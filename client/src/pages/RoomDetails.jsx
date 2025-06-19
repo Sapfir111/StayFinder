@@ -16,12 +16,10 @@ const RoomDetails = () => {
 
     const [isAvailable, setIsAvailable] = useState(false);
 
-    // Check if the Room is Available
     const checkAvailability = async () => {
         try {
-            // Check is Check-In Date is greater than Check-Out Date
             if (checkInDate >= checkOutDate) {
-                toast.error('Check-In Date should be less than Check-Out Date');
+                toast.error('Дата заїзду має бути меншою, ніж дата виїзду');
                 return;
             }
 
@@ -34,10 +32,10 @@ const RoomDetails = () => {
             if (data.success) {
                 if (data.isAvailable) {
                     setIsAvailable(true);
-                    toast.success('Room is available');
+                    toast.success('Номер вільний');
                 } else {
                     setIsAvailable(false);
-                    toast.error('Room is not available');
+                    toast.error('Номер не вільний');
                 }
             } else {
                 toast.error(data.message);
@@ -48,7 +46,6 @@ const RoomDetails = () => {
         }
     };
 
-    // onSubmitHandler function to check availability & book the room
     const onSubmitHandler = async (e) => {
         try {
             e.preventDefault();
@@ -91,8 +88,8 @@ const RoomDetails = () => {
             {/* Room Details */}
             <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
                 <div className="flex items-center gap-2">
-                    <h1 className="text-3xl md:text-4xl font-playfair">{room.hotel.name}</h1>
-                    <span className="font-inter text-sm">({room.roomType})</span>
+                    <h1 className="text-3xl md:text-4xl">{room.hotel.name}</h1>
+                    <span className="text-sm">({room.roomType})</span>
                 </div>
             </div>
 
@@ -137,7 +134,6 @@ const RoomDetails = () => {
             {/* Room Highlights */}
             <div className="flex flex-col md:flex-row md:justify-between mt-10">
                 <div className="flex flex-col">
-                    <h1 className="text-3xl md:text-4xl font-playfair">Experience Luxury Like Never Before</h1>
                     <div className="flex flex-wrap items-center mt-3 mb-6 gap-4">
                         {room.amenities.map((item, index) => {
                             const icon = facilityIcons[item];
@@ -149,7 +145,7 @@ const RoomDetails = () => {
                                 <div
                                     key={index}
                                     className="flex items-center gap-2 px-3 py-2 rounded-lg
-                                    bg-[#F5F5FF]/70"
+                                bg-[#F5F5FF]/70"
                                 >
                                     <img
                                         src={icon}
@@ -161,18 +157,17 @@ const RoomDetails = () => {
                             )
                         })}
                     </div>
+                    <p className="text-2xl font-medium">${room.pricePerNight} / за ніч</p>
                 </div>
-                {/* Room price */}
-                <p className="text-2xl font-medium">${room.pricePerNight} / за ніч</p>
             </div>
 
             {/* CheckIn CheckOut Form */}
             <form
                 onSubmit={onSubmitHandler}
                 className="flex flex-col md:flex-row items-start md:items-center justify-between
-                bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.15)] p-6 rounded-xl max-auto mt-16 max-w-6xl">
+            bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.15)] p-6 rounded-xl max-auto mt-16 max-w-6xl">
                 <div className="flex flex-col flex-wrap md:flex-row items-start md:items-center gap-4
-                md:gap-10 text-gray-500">
+            md:gap-10 text-gray-500">
                     <div className="flex flex-col">
                         <label
                             htmlFor="checkInDate"
@@ -218,7 +213,7 @@ const RoomDetails = () => {
                             className="max-w-20 rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none"
                             required
                             onChange={(e) => {
-                                if (e.target.value < 1) return; 
+                                if (e.target.value < 1) return;
                                 setGuests(e.target.value);
                             }}
                             value={guests}
@@ -227,16 +222,16 @@ const RoomDetails = () => {
                 </div>
                 <button
                     type="submit"
-                    className="bg-primary hover:bg-primary-dull active:scale-95 transition-all
-                    text-white rounded-md max-md:w-full max-md:mt-6 md:px-25 py-3 md:py-4
-                    text-base cursor-pointer"
+                    className="bg-blue-600 hover:bg-primary-dull active:scale-95 transition-all
+                text-white rounded-md max-md:w-full max-md:mt-6 md:px-25 py-3 md:py-4
+                text-base cursor-pointer"
                 >
                     {isAvailable ? 'Забронювати' : 'Перевірити доступність'}
                 </button>
             </form>
 
             {/* Common Specifications */}
-            <div className="mt-25 space-y-4">
+            <div className="mt-16 space-y-4">
                 {roomCommonData.map((spec, index) => (
                     <div
                         key={index}
@@ -254,16 +249,10 @@ const RoomDetails = () => {
                     </div>
                 ))}
             </div>
-            <div className="max-w-3xl border-y border-gray-300 my-15 py-10 text-gray-500">
-                <p>
-                    Гості будуть розміщені на першому поверсі залежно від наявності вільних місць. Ви отримаєте комфортабельні апартаменти з двома спальнями, що передають справжню атмосферу міста. Вказана ціна розрахована на двох осіб. Будь ласка, оберіть точну кількість гостей у відповідному полі, щоб дізнатися актуальну ціну для групи.
-                </p>
-            </div>
 
             {/* Hosted By */}
-            <div className="flex flex-col items-start gap-4">
+            <div className="flex flex-col items-start gap-4 mt-16">
                 <div className="flex gap-4">
-                    {/* Проблема із відображенням картинки */}
                     <img
                         src={room.hotel.owner.image}
                         alt="host"

@@ -35,13 +35,11 @@ const App = () => {
                     <Route path="/about-us" element={<AboutUs />} />
                     <Route path="/help-center" element={<HelpCenter />} />
                     <Route path="/help-center/:topic" element={<HelpCenter />} />
-
                     <Route path="/owner" element={<Layout />}>
                         <Route index element={<Dashboard />} />
                         <Route path="add-room" element={<AddRoom />} />
                         <Route path="list-room" element={<ListRoom />} />
                     </Route>
-
                 </Routes>
             </div>
             <Footer />

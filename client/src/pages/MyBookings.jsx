@@ -84,7 +84,7 @@ const MyBookings = () => {
                             />
                             <div className="flex flex-col gap-1.5 max-md:mt-3 min-md:ml-4">
                                 <div className="flex items-center gap-2">
-                                    <p className="font-playfair text-2xl">{booking.hotel.name}</p>
+                                    <p className="text-2xl">{booking.hotel.name}</p>
                                     <span className="font-inter text-sm">({booking.room.roomType})</span>
                                 </div>
                                 <div className="flex items-center gap-1 text-sm text-gray-500">

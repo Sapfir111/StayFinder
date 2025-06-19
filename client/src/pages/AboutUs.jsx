@@ -5,7 +5,7 @@ const AboutUs = () => {
         <section className="py-28 md:pb-35 md:pt-32 px-4 md:px-16 lg:px-24 xl:px-32">
             <div className="flex items-center justify-between w-full gap-10">
                 <div className="flex flex-col gap-3 md:max-w-1/2">
-                    <h1 className="text-4xl text-center md:text-left md:text-[40px] font-playfair">Про нас</h1>
+                    <h1 className="text-4xl text-center md:text-left md:text-[40px]">Про нас</h1>
                     <p>
                         Заснована у 2025 році в Києві, Україна, StayFinder — це платформа для бронювання готелів, яка поєднує мандрівників із винятковими варіантами проживання у понад багатьох країнах світу. Від затишних бутик-готелів до п’ятизіркових курортів — StayFinder спрощує процес пошуку, бронювання та насолоди ідеальним відпочинком.
                     </p>

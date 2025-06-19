@@ -27,10 +27,10 @@ const ListRoom = () => {
     const togleAvailabilty = async (roomId) => {
         const { data } = await axios.post('/api/rooms/toggle-availability', {roomId}, { headers: {Authorization: `Bearer ${await getToken()}`} });
         if (data.success) {
-            toast.success(data.message);
+            toast.success("Виконано");
             fetchRooms();
         } else {
-            toast.error(data.message);
+            toast.error("Щось не так");
         }
     };
 
