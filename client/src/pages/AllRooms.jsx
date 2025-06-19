@@ -46,7 +46,7 @@ const AllRooms = () => {
     const roomTypes = [
         'Односпальне ліжко',
         'Двоспальне ліжко',
-        'Кімната-люкс',
+        'Люкс номер',
         'Сімейний люкс',
     ];
 
@@ -160,7 +160,7 @@ const AllRooms = () => {
                         <img
                             src={room.images[0]}
                             alt="hotel-img"
-                            title="View Room Details"
+                            title="Деталі номера"
                             className="max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer"
                             onClick={() => {
                                 navigate(`/rooms/${room._id}`);
@@ -239,7 +239,7 @@ const AllRooms = () => {
                 <div className={`${openFilters ? 'h-auto' : 'h-0 lg:h-auto'} 
                 overflow-hidden transition-all duration-700`}>
                     <div className="px-5 pt-5">
-                        <p className="font-medium text-gray-800 pb-2">Популярні фільтри</p>
+                        <p className="font-medium text-gray-800 pb-2">Тип номера</p>
                         {roomTypes.map((room, index) => (
                             <CheckBox
                                 key={index}

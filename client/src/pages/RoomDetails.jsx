@@ -35,7 +35,7 @@ const RoomDetails = () => {
                     toast.success('Номер вільний');
                 } else {
                     setIsAvailable(false);
-                    toast.error('Номер не вільний');
+                    toast.error('Номер зайнятий');
                 }
             } else {
                 toast.error(data.message);

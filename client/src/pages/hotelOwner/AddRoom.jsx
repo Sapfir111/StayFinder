@@ -124,10 +124,10 @@ const AddRoom = () => {
                         value={inputs.roomType}
                         onChange={(e) => setInputs({...inputs, roomType: e.target.value})}
                         className="border opacity-70 border-gray-300 mt-1 rounded p-2 w-full">
-                        <option value="">Виберіть тип кімнати</option>
+                        <option value="">Виберіть тип номера</option>
                         <option value="Односпальне ліжко">Односпальне ліжко</option>
                         <option value="Двоспальне ліжко">Двоспальне ліжко</option>
-                        <option value="Кімната-люкс">Кімната-люкс</option>
+                        <option value="Люкс номер">Люкс номер</option>
                         <option value="Сімейний люкс">Сімейний люкс</option>
                     </select>
                 </div>

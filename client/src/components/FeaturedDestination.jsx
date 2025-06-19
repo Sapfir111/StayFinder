@@ -8,8 +8,8 @@ const FeaturedDestination = () => {
     return rooms.length > 0 && (
         <section className="flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20">
             <Title
-                title="Пропоновані готелі"
-                subTitle="Перевірені варіанти проживання для вашої подорожі"
+                title="Доступні готелі"
+                subTitle="Перевірені варіанти проживання для подорожей: зручність та надійність у кожному бронюванні"
             />
             <div className="flex flex-wrap items-center justify-center gap-6 mt-20">
                 {rooms.slice(0, 4).map((room, index) => (
