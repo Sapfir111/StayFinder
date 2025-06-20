@@ -6,7 +6,6 @@ const Footer = () => {
         { id: 'col-1', name: 'Головна', path: '/' },
         { id: 'col-1', name: 'Про нас', path: '/about-us' },
         { id: 'col-1', name: 'Готелі', path: '/rooms' },
-        { id: 'col-2', name: 'Центр допомоги', path: '/help-center' },
         { id: 'col-2', name: 'Доступність', path: '/help-center/accessibility' },
         { id: 'col-2', name: 'Інформація про безпеку', path: '/help-center/safety-information' },
         { id: 'col-2', name: 'Зв\`яжіться з нами', path: '/help-center/contact-us' },
