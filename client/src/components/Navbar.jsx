@@ -55,7 +55,7 @@ const Navbar = () => {
                             <UserButton>
                                 <UserButton.MenuItems>
                                     <UserButton.Action
-                                        label='Мої бронювання'
+                                        label='Ваші бронювання'
                                         labelIcon={<BookIcon/>}
                                         onClick={() => navigate('/my-bookings')}
                                     />
@@ -78,7 +78,7 @@ const Navbar = () => {
                         <UserButton>
                             <UserButton.MenuItems>
                                 <UserButton.Action
-                                    label='My Bookings'
+                                    label='Ваші бронювання'
                                     labelIcon={<BookIcon/>}
                                     onClick={() => navigate('/my-bookings')}
                                 />
