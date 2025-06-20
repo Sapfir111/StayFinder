@@ -81,9 +81,9 @@ const Hero = () => {
                 </div>
 
                 <div className='flex md:flex-col max-md:gap-2 max-md:items-center'>
-                    <label htmlFor="guests">Кількість гостей</label>
+                    <label htmlFor="guests">Гості</label>
                     <input min={1} max={4} id="guests" type="number"
-                           className=" rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none  max-w-16"
+                           className="rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none max-w-16"
                            placeholder="1"/>
                 </div>
 

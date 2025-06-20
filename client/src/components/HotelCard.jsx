@@ -33,7 +33,7 @@ const HotelCard = ({room, index}) => {
                     <p><span className="text-xl text-gray-800">${room.pricePerNight}</span>/за ніч</p>
                     <button className="px-4 py-2 text-sm font-medium border
                     border-gray-300 rounded hover:bg-gray-50 transition-all
-                    cursor-pointer">Забронювати</button>
+                    cursor-pointer">Деталі</button>
                 </div>
             </div>
         </Link>

@@ -1,10 +1,25 @@
 import {assets, facilityIcons} from "../assets/assets.js";
+import {useSearchParams} from "react-router-dom";
 import StarRating from "../components/StarRating.jsx";
+import {useMemo, useState} from "react";
 import {useAppContext} from "../context/AppContext.jsx";
 import Title from "../components/Title.jsx";
 
 const AllRooms = () => {
     const { rooms, navigate } = useAppContext();
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    const filterDestination = (room) => {
+        const destination = searchParams.get('destination');
+
+        if (!destination) {
+            return true;
+        }
+
+        return room.hotel.city.toLowerCase().includes(destination.toLowerCase());
+    };
+
+    const filteredRooms = rooms.filter((room) => filterDestination(room));
 
     return (
         <div className="flex flex-col-reverse lg:flex-row items-start
@@ -19,7 +34,7 @@ const AllRooms = () => {
                     />
                 </div>
 
-                {rooms.map((room) => (
+                {filteredRooms.map((room) => (
                     <div
                         key={room._id}
                         className="flex flex-col md:flex-row items-start py-10 gap-6
