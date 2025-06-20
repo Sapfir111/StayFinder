@@ -18,7 +18,7 @@ const HotelReg = () => {
             const { data } = await axios.post(`/api/hotels/`, {name, contact, address, city}, {headers: { Authorization: `Bearer ${await getToken()}` }});
 
             if (data.success) {
-                toast.success(data.message);
+                toast.success("Готель зареєстровано");
                 setIsOwner(true);
                 setShowHotelReg(false);
             } else {
@@ -53,7 +53,6 @@ const HotelReg = () => {
                         onClick={() => setShowHotelReg(false)}
                     />
                     <p className="text-2xl font-semibold mt-6">Зареєструйте ваш готель</p>
-                    {/* Hotel Name */}
                     <div className="w-full mt-4">
                         <label
                             htmlFor="name"
@@ -73,7 +72,6 @@ const HotelReg = () => {
                         />
 
                     </div>
-                    {/* Phone */}
                     <div className="w-full mt-4">
                         <label
                             htmlFor="contact"
@@ -93,7 +91,6 @@ const HotelReg = () => {
                         />
 
                     </div>
-                    {/* Address */}
                     <div className="w-full mt-4">
                         <label
                             htmlFor="address"
@@ -112,7 +109,6 @@ const HotelReg = () => {
                             value={address}
                         />
                     </div>
-                    {/* Select City Dropdown */}
                     <div className="w-full mt-4 max-w-60 mr-auto">
                         <label
                             htmlFor="city"
@@ -145,7 +141,7 @@ const HotelReg = () => {
                     </div>
                     <button className="bg-indigo-500 hover:bg-indigo-600 transition-all
                     text-white mr-auto px-6 py-2 rounded cursor-pointer mt-6">
-                        Зареєструвати
+                        Зареєструвати готель
                     </button>
                 </div>
             </form>

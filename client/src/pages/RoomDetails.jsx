@@ -85,7 +85,6 @@ const RoomDetails = () => {
 
     return room && (
         <div className="py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32">
-            {/* Room Details */}
             <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
                 <div className="flex items-center gap-2">
                     <h1 className="text-3xl md:text-4xl">{room.hotel.name}</h1>
@@ -93,13 +92,11 @@ const RoomDetails = () => {
                 </div>
             </div>
 
-            {/* Room Rating */}
             <div className="flex items-center gap-1 mt-2">
                 <StarRating/>
                 <p className="ml-2">200+ Відгуків</p>
             </div>
 
-            {/* Room Address */}
             <div className="flex items-center gap-1 text-gray-500 mt-2">
                 <img
                     src={assets.locationIcon}
@@ -108,7 +105,6 @@ const RoomDetails = () => {
                 <span>{room.hotel.address}</span>
             </div>
 
-            {/* Room Images */}
             <div className="flex flex-col lg:flex-row mt-6 gap-6">
                 <div className="lg:w-1/2 w-full">
                     <img
@@ -131,7 +127,6 @@ const RoomDetails = () => {
                 </div>
             </div>
 
-            {/* Room Highlights */}
             <div className="flex flex-col md:flex-row md:justify-between mt-10">
                 <div className="flex flex-col">
                     <div className="flex flex-wrap items-center mt-3 mb-6 gap-4">
@@ -161,13 +156,12 @@ const RoomDetails = () => {
                 </div>
             </div>
 
-            {/* CheckIn CheckOut Form */}
             <form
                 onSubmit={onSubmitHandler}
                 className="flex flex-col md:flex-row items-start md:items-center justify-between
-            bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.15)] p-6 rounded-xl max-auto mt-16 max-w-6xl">
+                bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.15)] p-6 rounded-xl max-auto mt-16 max-w-6xl">
                 <div className="flex flex-col flex-wrap md:flex-row items-start md:items-center gap-4
-            md:gap-10 text-gray-500">
+                md:gap-10 text-gray-500">
                     <div className="flex flex-col">
                         <label
                             htmlFor="checkInDate"
@@ -230,7 +224,6 @@ const RoomDetails = () => {
                 </button>
             </form>
 
-            {/* Common Specifications */}
             <div className="mt-16 space-y-4">
                 {roomCommonData.map((spec, index) => (
                     <div
@@ -250,7 +243,6 @@ const RoomDetails = () => {
                 ))}
             </div>
 
-            {/* Hosted By */}
             <div className="flex flex-col items-start gap-4 mt-16">
                 <div className="flex gap-4">
                     <img

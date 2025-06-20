@@ -31,7 +31,6 @@ const AddRoom = () => {
     const onSubmitHandler = async (e) => {
         e.preventDefault();
 
-        // Check if all inputs are filled
         if (!inputs.roomType || !inputs.pricePerNight || !inputs.amenities || !Object.values(images).some(image => image)) {
             toast.error('Будь ласка, вкажіть усі деталі');
             return;
@@ -94,7 +93,6 @@ const AddRoom = () => {
                 font="outfit"
                 align="left"
             />
-            {/* Upload Area For Images */}
             <p className="text-gray-800 mt-10">Зображення</p>
             <div className="grid grid-cols-2 sm:flex gap-4 my-2 flex-wrap">
                 {Object.keys(images).map((key) => (

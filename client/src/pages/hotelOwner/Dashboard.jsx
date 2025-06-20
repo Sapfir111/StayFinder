@@ -42,7 +42,6 @@ const Dashboard = () => {
                 font="outfit"
             />
             <div className="flex gap-4 my-8">
-                {/* Total Bookings */}
                 <div className="bg-primary/3 border border-primary/10 rounded flex p-4 pr-8">
                     <img
                         src={assets.totalBookingIcon}
@@ -54,7 +53,6 @@ const Dashboard = () => {
                         <p className="text-neutral-400 text-base">{dashboardData.totalBookings}</p>
                     </div>
                 </div>
-                {/* Total Revenue */}
                 <div className="bg-primary/3 border border-primary/10 rounded flex p-4 pr-8">
                     <img
                         src={assets.totalRevenueIcon}
@@ -68,7 +66,6 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            {/* Recent Bookings */}
             <h2 className="text-xl text-blue-950/70 font-medium mb-5">Недавні бронювання</h2>
             <div className="w-full max-w-3xl text-left border border-gray-300 rounded-lg max-h-80 overflow-y-scroll">
                 <table className="w-full">
