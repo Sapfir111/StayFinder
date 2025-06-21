@@ -12,7 +12,7 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-[#F6F9FC] text-gray-500/80 pt-8 px-6 md:px-16 lg:px-24 xl:px-32">
+        <footer className="bg-[#F6F9FC] text-gray-500/80 pt-8 pb-8 px-6 md:px-16 lg:px-24 xl:px-32">
             <div className="flex flex-col gap-5 md:grid md:grid-cols-[3fr_2fr_2fr]">
                 <div className="max-w-80">
                     <Link to="/">
@@ -79,10 +79,6 @@ const Footer = () => {
                         ))}
                     </ul>
                 </div>
-            </div>
-            <hr className='border-gray-300 mt-8'/>
-            <div className='flex flex-col md:flex-row gap-2 items-center justify-between py-5'>
-                <p>© {new Date().getFullYear()} StayFinder. Всі права захищено.</p>
             </div>
         </footer>
     );

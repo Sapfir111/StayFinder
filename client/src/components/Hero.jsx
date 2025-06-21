@@ -42,7 +42,6 @@ const Hero = () => {
             >
                 <div>
                     <div className='flex items-center gap-2'>
-                        <img src={assets.calenderIcon} alt="" className="h-4" />
                         <label htmlFor="destinationInput">Куди вирушаєте?</label>
                     </div>
                     <input

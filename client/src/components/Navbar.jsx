@@ -67,7 +67,7 @@ const Navbar = () => {
                                 onClick={openSignIn}
                                 className="bg-black text-white px-8 py-2.5 rounded-full ml-4"
                             >
-                                Увійдіть
+                                Увійти
                             </button>
                         )
                     }
@@ -111,7 +111,7 @@ const Navbar = () => {
                     {!user && <button
                         onClick={openSignIn}
                         className="bg-black text-white px-8 py-2.5 rounded-full transition-all duration-500">
-                        Увійдіть
+                        Увійти
                     </button>}
                 </div>
             </nav>
