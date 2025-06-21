@@ -52,7 +52,7 @@ const ListRoom = () => {
                 <table className="w-full">
                     <thead className="bg-gray-50">
                         <tr>
-                            <th className="py-3 px-4 text-gray-800 font-medium">Назва</th>
+                            <th className="py-3 px-4 text-gray-800 font-medium">Тип</th>
                             <th className="py-3 px-4 text-gray-800 font-medium max-sm:hidden">Зручності</th>
                             <th className="py-3 px-4 text-gray-800 font-medium">Ціна / за ніч</th>
                             <th className="py-3 px-4 text-gray-800 font-medium text-center">Дії</th>

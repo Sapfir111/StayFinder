@@ -72,7 +72,7 @@ const Dashboard = () => {
                     <thead className="bg-gray-50">
                         <tr>
                             <th className="py-3 px-4 text-gray-800 font-medium">Ім'я замовника</th>
-                            <th className="py-3 px-4 text-gray-800 font-medium max-sm:hidden">Назва номера</th>
+                            <th className="py-3 px-4 text-gray-800 font-medium max-sm:hidden">Тип номера</th>
                             <th className="py-3 px-4 text-gray-800 font-medium text-center">Загальна сума</th>
                             <th className="py-3 px-4 text-gray-800 font-medium text-center">Статус оплати</th>
                         </tr>
